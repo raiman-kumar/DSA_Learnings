@@ -37,6 +37,8 @@
 
 # print(count)
 
+# find largest elemeent in array
+
 # mylist = [10, 5, 18, 7, 20, 3]
 # largest = mylist[0]
 # second_largest = mylist[0]
@@ -45,13 +47,97 @@
 #         largest = i
 # print(largest)
 
-mylist = [10, 5, 18, 7, 20, 3]
-largest = mylist[0]
-second_largest = mylist[0]
-for i in mylist:
-    if i > largest:
-        second_largest = largest
-        largest = i
-    elif i > second_largest and i != largest:
-        second_largest = i
-print(second_largest)
+# find second largest in array
+
+# mylist = [10, 5, 18, 7, 20, 3]
+# largest = mylist[0]
+# second_largest = mylist[0]
+# for i in mylist:
+#     if i > largest:
+#         second_largest = largest
+#         largest = i
+#     elif i > second_largest and i != largest:
+#         second_largest = i
+# print(second_largest)
+
+# arr = [10,20,30,40,50]
+
+# print(arr[0])
+# print(arr[2])
+# print(arr[4])
+
+# traversal in array
+
+# arr = [10,20,30,40,50]
+# print(arr)
+
+# # method 1 : via pythonic
+# for i in arr:
+#     print(i)
+
+# # method 2 : via index
+
+# for i in range(len(arr)):
+#     print(arr[i])
+
+# # method 3 : professional
+
+# for index, value in enumerate(arr):
+#     print(index, value)
+
+# # sum of the elements
+# summ = 0
+# for i in arr:
+#     summ += i
+# print(summ)
+
+# # count even numbers
+# arr = [10,25,18,31,40]
+# count = 0
+
+# for i in arr:
+#     if i % 2 == 0:
+#         count += 1
+
+# print(count)
+
+# # largest element in array
+# largest = arr[0]
+# for i in arr:
+#     if i > largest:
+#         largest = i
+
+# print(largest)
+
+# search element in array
+# linear search
+
+# arr = [10,20,30,40,50]
+
+# for index, value in enumerate(arr):
+#     if value == 40:
+#         print(value,"found at index",index)
+#         break
+
+# binary search
+
+arr = [10,20,30,40,50]
+target = 30
+def binary_search(array,target_value):
+    left = 0
+    right = len(array)-1
+    while left <= right:
+        mid = (left + right) // 2
+        if array[mid] == target_value:
+            return mid
+            break
+        elif target_value > array[mid]:
+            left = mid + 1
+        elif target_value < array[mid]:
+            right = mid - 1
+        else:
+            return -1
+if binary_search(arr,target) == -1:
+    print('element not found')
+else:
+    print(target,'found at index',binary_search(arr,target))
