@@ -121,23 +121,38 @@
 
 # binary search
 
-arr = [10,20,30,40,50]
-target = 30
-def binary_search(array,target_value):
-    left = 0
-    right = len(array)-1
-    while left <= right:
-        mid = (left + right) // 2
-        if array[mid] == target_value:
-            return mid
-            break
-        elif target_value > array[mid]:
-            left = mid + 1
-        elif target_value < array[mid]:
-            right = mid - 1
-        else:
-            return -1
-if binary_search(arr,target) == -1:
-    print('element not found')
-else:
-    print(target,'found at index',binary_search(arr,target))
+# arr = [10,20,30,40,50]
+# target = 30
+# def binary_search(array,target_value):
+#     left = 0
+#     right = len(array)-1
+#     while left <= right:
+#         mid = (left + right) // 2
+#         if array[mid] == target_value:
+#             return mid
+#         elif target_value > array[mid]:
+#             left = mid + 1
+#         elif target_value < array[mid]:
+#             right = mid - 1
+#     else:
+#         return -1
+
+# status = binary_search(arr,target)
+# if  status == -1:
+#     print('element not found')
+# else:
+#     print(target,'found at index',binary_search(arr,target))
+
+# sorting 
+# bubble sort
+
+arr = [50,20,10,40,30,60,35,23,75,11]
+for j in range(len(arr)-1):
+    swapped = False
+    for i in range(len(arr)-j-1):
+        if arr[i] > arr[i+1]:
+            arr[i], arr[i+1] = arr[i+1], arr[i]
+            swapped = True
+    if swapped == False:
+        break
+print(arr)
