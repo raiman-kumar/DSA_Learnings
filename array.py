@@ -146,13 +146,37 @@
 # sorting 
 # bubble sort
 
-arr = [50,20,10,40,30,60,35,23,75,11]
-for j in range(len(arr)-1):
-    swapped = False
-    for i in range(len(arr)-j-1):
-        if arr[i] > arr[i+1]:
-            arr[i], arr[i+1] = arr[i+1], arr[i]
-            swapped = True
-    if swapped == False:
-        break
+# arr = [50,20,10,40,30,60,35,23,75,11]
+# for j in range(len(arr)-1):
+#     swapped = False
+#     for i in range(len(arr)-j-1):
+#         if arr[i] > arr[i+1]:
+#             arr[i], arr[i+1] = arr[i+1], arr[i]
+#             swapped = True
+#     if swapped == False:
+#         break
+# print(arr)
+
+# selection sort
+
+# arr = [50,20,10,40,30,60,35,23,75,11]
+# for j in range(len(arr)-1):
+#     minimum = j
+#     for i in range(j,len(arr)):
+#         if arr[minimum] > arr[i]:
+#             minimum = i
+#     if minimum != j:
+#         arr[j], arr[minimum] = arr[minimum], arr[j]
+# print(arr)
+
+# insertion sort
+
+arr = [50,20,40,30,10]
+
+for i in range(1,len(arr)):
+    key = arr[i]
+    for i in range(1,len(arr)):
+        if arr[i-1] > key:
+            arr[i], arr[i-1] = arr[i-1], arr[i]
+
 print(arr)
