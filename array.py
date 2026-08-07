@@ -174,9 +174,15 @@
 arr = [50,20,40,30,10]
 
 for i in range(1,len(arr)):
-    key = arr[i]
-    for i in range(1,len(arr)):
-        if arr[i-1] > key:
-            arr[i], arr[i-1] = arr[i-1], arr[i]
+    insert_index = i
+    current_value = arr[i]
+
+    for j in range(i-1,-1,-1):
+        if arr[j] > current_value:
+            arr[j+1] = arr[j]
+            insert_index = j
+        else:
+            break
+    arr[insert_index] = current_value
 
 print(arr)
