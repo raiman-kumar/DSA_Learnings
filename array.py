@@ -189,9 +189,52 @@
 
 # recursion
 
-def show(n):
-    if n == 0:
-        return
-    print('show method calling')
-    show(n-1)
-show(2)
+# def show(n):
+#     if n == 0: # base case
+#         return
+#     print('show method calling')
+#     show(n-1)  # recursive relation
+# show(3)
+
+# print 1 to n
+# def show(n):
+#     if n == 0: # base case
+#         return 0   
+#     show(n-1)  # recursive relation
+#     print(n)   # print backword
+# show(5)
+
+# print n to 1
+# def show(n):   # base case
+#     if n == 0: # recursive relation
+#         return 0   
+#     print(n)   # print forward
+#     show(n-1)
+# show(5)
+
+# sum of n to 1
+# def add(n):
+#     if n == 0: 
+#         return 0
+    
+#     return n + add(n-1)  
+# print(add(5))
+
+# factorial
+# def fact(n):
+#     if n == 0: 
+#         return 1   
+#     return n * (n-1)
+    
+# print(fact(5))
+
+# fibonacci
+def fib(n):
+    if n == 0: 
+        return 0
+    if n == 1:
+        return 1
+
+    return fib(n) + fib(n-1)
+    
+print(fib(5))
