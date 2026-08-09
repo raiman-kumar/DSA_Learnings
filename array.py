@@ -230,11 +230,24 @@
 
 # fibonacci
 def fib(n):
-    if n == 0: 
-        return 0
+    if n <= 0: 
+        return []
     if n == 1:
-        return 1
+        return [0]
+    series = [0, 1]
+    for _ in range(2, n):
+        next_term = series[-1] + series[-2]
+        series.append(next_term)       
+    return series
 
-    return fib(n) + fib(n-1)
-    
 print(fib(5))
+
+# power a^b
+
+def power(a,b):
+    if b == 0:
+        return 1
+    if b == 1:
+        return a
+
+    
