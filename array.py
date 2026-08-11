@@ -228,51 +228,87 @@
     
 # print(fact(5))
 
-# fibonacci
-def fib(n):
-    if n <= 0: 
-        return []
-    if n == 1:
-        return [0]
-    series = [0, 1]
-    for _ in range(2, n):
-        next_term = series[-1] + series[-2]
-        series.append(next_term)       
-    return series
+# # fibonacci
+# def fib(n):
+#     if n <= 0: 
+#         return []
+#     if n == 1:
+#         return [0]
+#     series = [0, 1]
+#     for _ in range(2, n):
+#         next_term = series[-1] + series[-2]
+#         series.append(next_term)       
+#     return series
 
-print(fib(5))
+# print(fib(5))
 
 # power a^b using recursion
 
-def power(a,b):
-    if b == 0:
-        return 1
-    if b == 1:
-        return a
+# def power(a,b):
+#     if b == 0:
+#         return 1
+#     if b == 1:
+#         return a
 
 # quick sort
 
-def partition(array, low, high):
-    pivot = array[high]
-    i = low - 1
+# def partition(array, low, high):
+#     pivot = array[high]
+#     i = low - 1
 
-    for j in range(low, high):
-        if array[j] <= pivot:
+#     for j in range(low, high):
+#         if array[j] <= pivot:
+#             i += 1
+#             array[i], array[j] = array[j], array[i]
+
+#     array[i+1], array[high] = array[high], array[i+1]
+#     return i+1
+
+# def quicksort(array, low=0, high=None):
+#     if high is None:
+#         high = len(array) - 1
+
+#     if low < high:
+#         pivot_index = partition(array, low, high)
+#         quicksort(array, low, pivot_index-1)
+#         quicksort(array, pivot_index+1, high)
+
+# arr = [64, 43, 67, 34, 25, 83, 12, 22, 11, 90, 5]
+# quicksort(arr)
+# print("Sorted array:", arr)
+
+# merge sort
+
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    mid = len(arr) // 2
+    left_half = arr[:mid]
+    right_half = arr[mid:]
+
+    sortedLeft = merge_sort(left_half)
+    sortedRight = merge_sort(right_half)
+
+    return merge(sortedLeft, sortedRight)
+
+def merge(left, right):
+    result = []
+    i = j = 0
+
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
             i += 1
-            array[i], array[j] = array[j], array[i]
+        else:
+            result.append(right[j])
+            j += 1
 
-    array[i+1], array[high] = array[high], array[i+1]
-    return i+1
+    result.extend(left[i:])
+    result.extend(right[j:])
 
-def quicksort(array, low=0, high=None):
-    if high is None:
-        high = len(array) - 1
+    return result
 
-    if low < high:
-        pivot_index = partition(array, low, high)
-        quicksort(array, low, pivot_index-1)
-        quicksort(array, pivot_index+1, high)
-
-arr = [64, 43, 67, 34, 25, 83, 12, 22, 11, 90, 5]
-quicksort(arr)
-print("Sorted array:", arr)
+unsorted_arr = [33, 74, 6, 10, 15, 23, 55, 13, 64]
+sorted_arr = merge_sort(unsorted_arr)
+print("Sorted array:", sorted_arr)
