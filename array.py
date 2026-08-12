@@ -279,36 +279,60 @@
 
 # merge sort
 
-def merge_sort(arr):
-    if len(arr) <= 1:
-        return arr
+# def merge_sort(arr):
+#     if len(arr) <= 1:
+#         return arr
 
-    mid = len(arr) // 2
-    left_half = arr[:mid]
-    right_half = arr[mid:]
+#     mid = len(arr) // 2
+#     left_half = arr[:mid]
+#     right_half = arr[mid:]
 
-    sortedLeft = merge_sort(left_half)
-    sortedRight = merge_sort(right_half)
+#     sortedLeft = merge_sort(left_half)
+#     sortedRight = merge_sort(right_half)
 
-    return merge(sortedLeft, sortedRight)
+#     return merge(sortedLeft, sortedRight)
 
-def merge(left, right):
-    result = []
-    i = j = 0
+# def merge(left, right):
+#     result = []
+#     i = j = 0
 
-    while i < len(left) and j < len(right):
-        if left[i] < right[j]:
-            result.append(left[i])
-            i += 1
-        else:
-            result.append(right[j])
-            j += 1
+#     while i < len(left) and j < len(right):
+#         if left[i] < right[j]:
+#             result.append(left[i])
+#             i += 1
+#         else:
+#             result.append(right[j])
+#             j += 1
 
-    result.extend(left[i:])
-    result.extend(right[j:])
+#     result.extend(left[i:])
+#     result.extend(right[j:])
 
-    return result
+#     return result
 
-unsorted_arr = [33, 74, 6, 10, 15, 23, 55, 13, 64]
-sorted_arr = merge_sort(unsorted_arr)
+# unsorted_arr = [33, 74, 6, 10, 15, 23, 55, 13, 64]
+# sorted_arr = merge_sort(unsorted_arr)
+# print("Sorted array:", sorted_arr)
+
+# counting sort
+
+
+def counting_sort(array):
+    if not array:
+        return array
+        
+    max_val = max(array)
+    count = [0] * (max_val + 1)
+
+    for num in array:
+        count[num] += 1
+        
+    array[:] = []
+
+    for num, freq in enumerate(count):
+        array.extend([num] * freq)
+
+    return array
+
+unsorted_arr = [4, 7, 3, 2, 2, 6, 3, 3, 1, 6, 5, 2, 3]
+sorted_arr = counting_sort(unsorted_arr)
 print("Sorted array:", sorted_arr)
