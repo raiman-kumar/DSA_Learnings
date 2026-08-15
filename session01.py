@@ -7,4 +7,8 @@ app = FastAPI()
 def show():
     return 'hello world'
 
-print(show())
+@app.post('/user/{username}/')
+def user(username):
+    name = username
+    return f'user name is {name}'
+
