@@ -337,7 +337,49 @@
 # sorted_arr = counting_sort(unsorted_arr)
 # print("Sorted array:", sorted_arr)
 
+# class linked_list:
+#     data = None
+#     address = None
 
-class linked_list:
-    data = None
-    address = None
+# def fact(n):
+#     factorial = 1
+#     for i in range(2,n+1):
+#         factorial = factorial * i
+#     print(factorial)
+# fact(5)
+
+# def fact(n):
+#     if n == 0:
+#         return 1
+#     return n * fact(n-1)
+# print(fact(6))
+
+# def fact(n):
+#     if n == 0:
+#         return 1
+#     print(n)
+#     return n * fact(n-1)
+# print(fact(6))
+
+def fib(n):
+    num1, num2 = 0, 1
+    print(num1)
+    print(num2)
+    for i in range(n-2):
+        num3 = num1 + num2
+        num1 = num2
+        num2 = num3
+        print(num3)
+fib(6)
+
+def fib(n):
+    if n <= 0:
+        return []
+    if n == 1:
+        return [0]
+    series = [0,1]
+    for i in range(2,n):
+        new_value = series[-1] + series[-2]
+        series.append(new_value)
+    return series
+print(fib(8))
