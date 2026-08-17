@@ -21,3 +21,23 @@ names = ['aman','rohit','sahil']
 def user(name):
     names.remove(name)
     return names
+
+users = [{"name":"rahul",
+          "age":20},
+          {"name":'ravi',
+           "age":21}]
+
+class User(BaseModel):
+    name : str
+    age : int
+
+@app.get('/user/{name}')
+def get_user(name):
+    for i in range(len(users)):
+        if users[i]['name'] == name :
+            return users[i]
+
+@app.post('/user')
+def create_user(user : User):
+    users.append(user)
+    return users
