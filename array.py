@@ -383,3 +383,17 @@ def fib(n):
         series.append(new_value)
     return series
 print(fib(8))
+
+# insertion sort without recursion
+
+array = [3,2,4,6,8,5,7,1]
+
+for i in range(1,len(array)):
+    insert_index = i
+    insert_value = array.pop(i)
+    for j in range(i-1,-1,-1):
+        if array[j] > insert_value:
+            insert_index = j
+    array.insert(insert_index,insert_value)
+
+print(array)
