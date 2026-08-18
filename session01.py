@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from routes.products import router
 
 app = FastAPI()
 
@@ -41,3 +42,8 @@ def get_user(name):
 def create_user(user : User):
     users.append(user)
     return users
+
+# CRUD operation using FastAPI
+
+app.include_router(router)
+
