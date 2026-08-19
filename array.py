@@ -361,39 +361,53 @@
 #     return n * fact(n-1)
 # print(fact(6))
 
-def fib(n):
-    num1, num2 = 0, 1
-    print(num1)
-    print(num2)
-    for i in range(n-2):
-        num3 = num1 + num2
-        num1 = num2
-        num2 = num3
-        print(num3)
-fib(6)
+# def fib(n):
+#     num1, num2 = 0, 1
+#     print(num1)
+#     print(num2)
+#     for i in range(n-2):
+#         num3 = num1 + num2
+#         num1 = num2
+#         num2 = num3
+#         print(num3)
+# fib(6)
 
-def fib(n):
-    if n <= 0:
-        return []
-    if n == 1:
-        return [0]
-    series = [0,1]
-    for i in range(2,n):
-        new_value = series[-1] + series[-2]
-        series.append(new_value)
-    return series
-print(fib(8))
+# def fib(n):
+#     if n <= 0:
+#         return []
+#     if n == 1:
+#         return [0]
+#     series = [0,1]
+#     for i in range(2,n):
+#         new_value = series[-1] + series[-2]
+#         series.append(new_value)
+#     return series
+# print(fib(8))
 
-# insertion sort without recursion
+# # insertion sort without recursion
 
-array = [3,2,4,6,8,5,7,1]
+# array = [3,2,4,6,8,5,7,1]
 
-for i in range(1,len(array)):
-    insert_index = i
-    insert_value = array.pop(i)
-    for j in range(i-1,-1,-1):
-        if array[j] > insert_value:
-            insert_index = j
-    array.insert(insert_index,insert_value)
+# for i in range(1,len(array)):
+#     insert_index = i
+#     insert_value = array.pop(i)
+#     for j in range(i-1,-1,-1):
+#         if array[j] > insert_value:
+#             insert_index = j
+#     array.insert(insert_index,insert_value)
 
+# print(array)
+
+# array = [10,20,30,60,50,40]
+# for i in range(len(array)):
+#     for j in range(len(array)-i-1):
+#         if array[j] >= array[j+1]:
+#             array[j], array[j+1] = array[j+1], array[j]
+# print(array)
+
+array = [10,20,30,60,50,40]
+for i in range(len(array)):
+    for j in range(len(array)-i-1):
+        if array[j] >= array[j+1]:
+            array[j], array[j+1] = array[j+1], array[j]
 print(array)
