@@ -405,9 +405,53 @@
 #             array[j], array[j+1] = array[j+1], array[j]
 # print(array)
 
-array = [10,20,30,60,50,40]
-for i in range(len(array)):
-    for j in range(len(array)-i-1):
-        if array[j] >= array[j+1]:
-            array[j], array[j+1] = array[j+1], array[j]
-print(array)
+# simple stack using linked list method
+
+# class node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next : None
+
+# class linkedliststack:
+#     def __init__(self):
+#         self.top = None
+
+#     def push(self, item):
+#         new_node = node(item)
+#         new_node.next = self.top
+#         self.top = new_node
+#         print(item,'inserted into the stack')
+
+# lls = linkedliststack()
+# lls.push(10)
+
+# simple tree implimentation using linked list
+class node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+class tree:
+    def push(data):
+        new_node = node(data)
+
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.data, end=" ")
+        inorder(root.right)
+
+root = node(10)
+node_b = node(20)
+node_c = node(30)
+node_d = node(40)
+node_e = node(50)
+
+root.left = node_b 
+root.right = node_c
+
+node_b.left = node_d
+node_b.right = node_e  
+
+inorder(root)
