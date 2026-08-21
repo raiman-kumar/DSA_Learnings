@@ -426,32 +426,73 @@
 # lls.push(10)
 
 # simple tree implimentation using linked list
-class node:
+# class node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.left = None
+#         self.right = None
+
+# class tree:
+#     def push(data):
+#         new_node = node(data)
+
+# def inorder(root):
+#     if root:
+#         inorder(root.left)
+#         print(root.data, end=" ")
+#         inorder(root.right)
+
+# root = node(10)
+# node_b = node(20)
+# node_c = node(30)
+# node_d = node(40)
+# node_e = node(50)
+
+# root.left = node_b 
+# root.right = node_c
+
+# node_b.left = node_d
+# node_b.right = node_e  
+
+# inorder(root)
+
+# a simple linked list
+
+class Node:
     def __init__(self, data):
         self.data = data
-        self.left = None
-        self.right = None
+        self.next = None
 
-class tree:
-    def push(data):
-        new_node = node(data)
+node1 = Node(10)
+node2 = Node(30)
+node3 = Node(20)
+node4 = Node(40)
 
-def inorder(root):
-    if root:
-        inorder(root.left)
-        print(root.data, end=" ")
-        inorder(root.right)
+node1.next = node2
+node2.next = node3
+node3.next = node4
 
-root = node(10)
-node_b = node(20)
-node_c = node(30)
-node_d = node(40)
-node_e = node(50)
+# using loop
 
-root.left = node_b 
-root.right = node_c
+nodes = [node1,node2,node3,node4]
+for i in nodes:
+    print(i.data)
+    if i.next == None:
+        break
 
-node_b.left = node_d
-node_b.right = node_e  
+# using recursion method1
 
-inorder(root)
+def travarsal(node):
+    print(node.data)
+    if node.next != None:
+        travarsal(node.next)
+
+# using recursion method2
+
+def travarsal(node):
+    print(node.data)
+    if node.next == None:
+        return
+    travarsal(node.next)
+
+travarsal(node1)
