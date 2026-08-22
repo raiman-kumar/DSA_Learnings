@@ -458,41 +458,73 @@
 
 # a simple linked list
 
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+
+# node1 = Node(10)
+# node2 = Node(30)
+# node3 = Node(20)
+# node4 = Node(40)
+
+# node1.next = node2
+# node2.next = node3
+# node3.next = node4
+
+# # using loop
+
+# nodes = [node1,node2,node3,node4]
+# for i in nodes:
+#     print(i.data)
+#     if i.next == None:
+#         break
+
+# # using recursion method1
+
+# def travarsal(node):
+#     print(node.data)
+#     if node.next != None:
+#         travarsal(node.next)
+
+# # using recursion method2
+
+# def travarsal(node):
+#     print(node.data)
+#     if node.next == None:
+#         return
+#     travarsal(node.next)
+
+# travarsal(node1)
+
+# created array and perform travrsal
+
+my_array = []
+
+my_array.append(110)
+my_array.append(190)
+my_array.append(120)
+
+for i in range(len(my_array)):
+    print(my_array[i])
+
+# created linked list and perform travrsal
+
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
 
-node1 = Node(10)
-node2 = Node(30)
-node3 = Node(20)
-node4 = Node(40)
-
+node1 = Node(200)
+node2 = Node(300)
 node1.next = node2
+node3 = Node(400)
 node2.next = node3
-node3.next = node4
 
-# using loop
-
-nodes = [node1,node2,node3,node4]
-for i in nodes:
-    print(i.data)
-    if i.next == None:
-        break
-
-# using recursion method1
-
-def travarsal(node):
-    print(node.data)
-    if node.next != None:
-        travarsal(node.next)
-
-# using recursion method2
-
-def travarsal(node):
+def traverse(node):
     print(node.data)
     if node.next == None:
         return
-    travarsal(node.next)
-
-travarsal(node1)
+    traverse(node.next)
+print('travrse')
+traverse(node1)
