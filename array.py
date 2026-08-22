@@ -528,3 +528,12 @@ def traverse(node):
     traverse(node.next)
 print('travrse')
 traverse(node1)
+
+# traversal using loop
+print("traversal using loop")
+node = node1
+while node.data != None:
+    print(node.data)
+    if node.next == None:
+        break
+    node = node.next
